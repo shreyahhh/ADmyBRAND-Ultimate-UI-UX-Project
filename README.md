@@ -1,4 +1,3 @@
-```markdown
 # 🚀 ADmyBRAND - Ultimate AI-Powered Marketing Platform
 
 <div align="center">
@@ -269,6 +268,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 </div>
 
 ---
-
-**Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
-```
