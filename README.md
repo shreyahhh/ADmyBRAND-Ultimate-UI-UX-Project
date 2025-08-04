@@ -229,6 +229,22 @@ npm run lint     # Run ESLint
 
 ---
 
+## 🤝 Contributing
+
+1. **Fork the repository**
+2. **Create feature branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit changes** (`git commit -m 'Add AmazingFeature'`)
+4. **Push to branch** (`git push origin feature/AmazingFeature`)
+5. **Open Pull Request**
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
 ## 🎯 Future Enhancements
 
 - [ ] **User Dashboard** - Personal analytics and campaign management
@@ -236,6 +252,14 @@ npm run lint     # Run ESLint
 - [ ] **Advanced Analytics** - More detailed reporting features
 - [ ] **Team Collaboration** - Multi-user workspace functionality
 - [ ] **Mobile App** - Native iOS and Android applications
+
+---
+
+## 👨‍💻 Developer
+
+**Shreya** - Full Stack Developer  
+- 🌐 **GitHub**: [@shreyahhh](https://github.com/shreyahhh)
+- 💼 **Project**: [ADmyBRAND Live Demo](https://admybrand.vercel.app)
 
 ---
 
