@@ -182,3 +182,71 @@
 ::-webkit-scrollbar-corner {
   background: hsl(var(--background));
 } 
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+#example {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#example ul {
+    display: flex;
+    list-style: none;
+    height: 320px;
+    overflow-x: scroll;
+    padding: 20px 0;
+    flex: 0 0 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+#example ::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    background: #374151; /* gray-700 */
+    border-radius: 1ex;
+}
+
+#example ::-webkit-scrollbar-thumb {
+    background: #9ca3af; /* gray-400 */
+    border-radius: 1ex;
+}
+
+#example ::-webkit-scrollbar-corner {
+    background: #1f2937; /* gray-800 */
+}
+
+#example li.platform-card {
+    flex: 0 0 280px;
+    border-radius: 8px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 280px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+#example li.platform-card:hover {
+    transform: translateY(-4px);
+}

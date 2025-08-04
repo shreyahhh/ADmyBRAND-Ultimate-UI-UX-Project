@@ -99,6 +99,10 @@ export default function Home() {
     }
   ];
 
+  const logos = [
+    'Microsoft', 'Apple', 'Netflix', 'Spotify', 'Amazon', 'Tesla', 'Adobe', 'Slack', 'Airbnb', 'Uber'
+  ];
+
   return (
     <>
       <main className="min-h-screen bg-black">
@@ -109,22 +113,22 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 via-black/30 to-gray-800/50"></div>
         <div className="container mx-auto relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            {/* Badge */}
+            {/* Badge - UPDATED */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-gray-800 to-gray-700 text-white text-sm font-semibold mb-8 backdrop-blur-sm border border-gray-600/50"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-green-900/30 text-green-300 text-sm font-semibold mb-8 backdrop-blur-sm border border-green-500/30"
             >
-              <span className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></span>
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></span>
               Your AI Co-Pilot for Effortless Marketing
             </motion.div>
 
-            {/* Main Heading */}
+            {/* Main Heading - UPDATED */}
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
+              className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight"
             >
               Stop Guessing.{' '}
               <span className="bg-gradient-to-r from-gray-300 via-white to-gray-300 bg-clip-text text-transparent">
@@ -132,12 +136,12 @@ export default function Home() {
               </span>
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Subtitle - UPDATED */}
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-medium"
+              className="text-lg text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed"
             >
               The ADmyBRAND AI Suite writes your copy, predicts your next customer, and automates your campaigns. <span className="text-white font-semibold">Effortlessly.</span>
             </motion.p>
@@ -147,30 +151,30 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="max-w-2xl mx-auto mb-12"
+              className="max-w-2xl mx-auto mb-10"
             >
-              <div className="bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/20">
-                <div className="flex flex-col">
+              <div className="bg-gray-800/80 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-gray-700/20">
+                <div className="flex flex-col space-y-4">
                   <Textarea
                     placeholder="e.g., 'Launch a campaign for a new vegan sneaker brand targeting environmentally conscious millennials...'"
-                    className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-white focus:border-transparent min-h-[100px] rounded-2xl border-0"
+                    className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-white focus:border-transparent min-h-[100px]"
                   />
                 </div>
               </div>
             </motion.div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - UPDATED */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
             >
-              <Button variant="secondary" size="xl">
+              <Button variant="secondary" size="lg">
                 Start Your Free Trial
               </Button>
               <Button 
-                size="xl"
+                size="lg"
                 onClick={() => {
                   const element = document.querySelector('#pricing');
                   if (element) {
@@ -185,33 +189,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof Bar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-black">
+      {/* Social Proof Bar - UPDATED */}
+      <section className="py-12 bg-black">
         <div className="container mx-auto">
           <div className="text-center mb-8">
             <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">Trusted by Industry Leaders</p>
           </div>
-          <div className="overflow-hidden">
-            <motion.div 
-              className="flex items-center space-x-8 whitespace-nowrap"
-              animate={{ x: [-100, -2000] }}
-              transition={{ 
-                duration: 30, 
-                repeat: Infinity, 
-                ease: "linear" 
-              }}
-            >
-              {[
-                'Microsoft', 'Apple', 'Netflix', 'Spotify', 'Amazon', 'Tesla', 'Adobe', 'Slack', 'Airbnb', 'Uber'
-              ].concat(['Microsoft', 'Apple', 'Netflix', 'Spotify', 'Amazon', 'Tesla', 'Adobe', 'Slack', 'Airbnb', 'Uber']).map((company, index) => (
-                <div
-                  key={`${company}-${index}`}
-                  className="flex items-center text-gray-400 hover:text-white transition-colors duration-300 mx-6"
-                >
-                  <span className="text-sm font-medium">{company}</span>
-                </div>
+          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll">
+              {logos.map((logo, index) => (
+                <li key={index} className="text-gray-400 hover:text-white transition-colors duration-300 text-lg font-medium">
+                  {logo}
+                </li>
               ))}
-            </motion.div>
+            </ul>
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll" aria-hidden="true">
+               {logos.map((logo, index) => (
+                <li key={index} className="text-gray-400 hover:text-white transition-colors duration-300 text-lg font-medium">
+                  {logo}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
