@@ -24,7 +24,7 @@ import AIFeaturesGrid from '@/components/ui/AIFeaturesGrid';
 export default function Home() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [yearlyPricing, setYearlyPricing] = useState(false);
-  
+
   // Pricing Calculator State
   const [teamSize, setTeamSize] = useState(5);
   const [audienceSizeIndex, setAudienceSizeIndex] = useState(1);
@@ -267,30 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof Bar - UPDATED */}
-      <section className="py-12 bg-black">
-        <div className="container mx-auto">
-          <div className="text-center mb-8">
-            <p className="text-sm font-medium text-gray-400 uppercase tracking-wider">Trusted by Industry Leaders</p>
-          </div>
-          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll">
-              {logos.map((logo, index) => (
-                <li key={index} className="text-gray-400 hover:text-white transition-colors duration-300 text-base font-medium">
-                  {logo}
-                </li>
-              ))}
-            </ul>
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll" aria-hidden="true">
-               {logos.map((logo, index) => (
-                <li key={index} className="text-gray-400 hover:text-white transition-colors duration-300 text-base font-medium">
-                  {logo}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+
 
       {/* Core Pillars Section - Bento Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
@@ -302,7 +279,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-xl font-bold text-white mb-4"
             >
-              Three Pillars of <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">AI Marketing</span>
+              THREE PILLARS OF AI MARKETING
             </motion.h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -362,11 +339,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Calculator Section */}
+      {/* Feature Deep-Dive: AI-Powered Features Section */}
+      <section id="features" className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-xl font-bold text-white mb-4">
+              AI-POWERED FEATURES
+            </h2>
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
+              Discover our intelligent marketing tools that adapt and learn from your data
+            </p>
+          </div>
+          <AIFeaturesGrid />
+        </div>
+      </section>
+
+      {/* Interactive Calculator: Pricing Calculator Section */}
       <section id="pricing" className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-xl font-bold text-white mb-4">Custom Pricing Calculator</h2>
+            <h2 className="text-xl font-bold text-white mb-4">CUSTOM PRICING CALCULATOR</h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
               Build your perfect plan with our value-based pricing. Pay only for what you need.
             </p>
@@ -377,62 +369,66 @@ export default function Home() {
             <div className="space-y-12">
               {/* Team Size Slider */}
               <div>
-                <label className="block text-white font-semibold text-base mb-6">
+                <label className="block text-white font-semibold text-base mb-4">
                   How many team members need access?
-                </label>
+                  </label>
                 <div className="mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-gray-400">1</span>
+                    <span className="text-sm text-gray-400">25</span>
+                    <span className="text-sm text-gray-400">50</span>
+                    <span className="text-sm text-gray-400">100+</span>
+                  </div>
                   <input
                     type="range"
                     min="1"
                     max="100"
                     value={teamSize}
                     onChange={(e) => setTeamSize(parseInt(e.target.value))}
-                    className="w-full h-3 bg-gray-800 rounded-lg appearance-none cursor-pointer slider"
+                    className="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
                   />
-                  <div className="flex justify-between text-sm text-gray-500 mt-3">
-                    <span>1</span>
-                    <span>25</span>
-                    <span>50</span>
-                    <span>100+</span>
+                  <div className="flex justify-end mt-2">
+                    <span className="text-base text-white font-medium">{teamSize === 100 ? '100+' : teamSize}</span>
                   </div>
                 </div>
-                <div className="text-xl font-bold text-white">{teamSize === 100 ? '100+' : teamSize} team members</div>
               </div>
 
               {/* Audience Size Slider */}
               <div>
-                <label className="block text-white font-semibold text-base mb-6">
+                <label className="block text-white font-semibold text-base mb-4">
                   How many customers do you reach per month?
-                </label>
+                  </label>
                 <div className="mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-gray-400">1K</span>
+                    <span className="text-sm text-gray-400">10K</span>
+                    <span className="text-sm text-gray-400">50K</span>
+                    <span className="text-sm text-gray-400">250K</span>
+                    <span className="text-sm text-gray-400">1M+</span>
+                  </div>
                   <input
                     type="range"
                     min="0"
                     max="4"
                     value={audienceSizeIndex}
                     onChange={(e) => setAudienceSizeIndex(parseInt(e.target.value))}
-                    className="w-full h-3 bg-gray-800 rounded-lg appearance-none cursor-pointer slider"
+                    className="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
                   />
-                  <div className="flex justify-between text-sm text-gray-500 mt-3">
-                    <span>1K</span>
-                    <span>10K</span>
-                    <span>50K</span>
-                    <span>250K</span>
-                    <span>1M+</span>
+                  <div className="flex justify-end mt-2">
+                    <span className="text-base text-white font-medium">{audienceSizes[audienceSizeIndex]}</span>
                   </div>
                 </div>
-                <div className="text-xl font-bold text-white">{audienceSizes[audienceSizeIndex]}</div>
               </div>
 
-              {/* Feature Modules */}
-              <div className="space-y-8">
+                            {/* Feature Modules */}
+              <div className="space-y-6">
                 {/* Pillar 1: Generate Content */}
-                <div className="border-b border-gray-800 pb-8">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="border-b border-gray-800 pb-6">
+                  <div className="flex items-center justify-between mb-3">
                     <div>
-                      <h3 className="text-white font-semibold text-base">✨ Generate Content</h3>
+                      <h3 className="text-white font-semibold text-base">Generate Content</h3>
                       <p className="text-gray-400 text-sm">Advanced Creative Studio</p>
-                    </div>
+          </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
@@ -441,18 +437,18 @@ export default function Home() {
                         className="sr-only peer"
                       />
                       <div className="w-12 h-6 bg-gray-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
-                    </label>
-                  </div>
+                  </label>
+                    </div>
                   <p className="text-gray-300 text-base">
                     Generate content in 25+ languages, clone your brand's unique voice, and create AI-powered video scripts.
                   </p>
-                </div>
+                      </div>
 
                 {/* Pillar 2: Predict Trends */}
-                <div className="border-b border-gray-800 pb-8">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="border-b border-gray-800 pb-6">
+                  <div className="flex items-center justify-between mb-3">
                     <div>
-                      <h3 className="text-white font-semibold text-base">🔮 Predict Trends</h3>
+                      <h3 className="text-white font-semibold text-base">Predict Trends</h3>
                       <p className="text-gray-400 text-sm">Predictive Analytics Suite</p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
@@ -463,7 +459,7 @@ export default function Home() {
                         className="sr-only peer"
                       />
                       <div className="w-12 h-6 bg-gray-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
-                    </label>
+                  </label>
                   </div>
                   <p className="text-gray-300 text-base">
                     Unlock audience forecasting, competitor SEO tracking (Brand Sentinel), and market trend analysis.
@@ -472,32 +468,32 @@ export default function Home() {
 
                 {/* Pillar 3: Automate Campaigns */}
                 <div>
-                  <div className="mb-6">
-                    <h3 className="text-white font-semibold text-base">🚀 Automate Campaigns</h3>
+                  <div className="mb-4">
+                    <h3 className="text-white font-semibold text-base">Automate Campaigns</h3>
                     <p className="text-gray-400 text-sm">Automated Ad Channels</p>
                   </div>
-                  <p className="text-gray-300 text-base mb-6">
+                  <p className="text-gray-300 text-base mb-4">
                     Select the channels you want our AI to manage and optimize automatically.
                   </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
                     {automatedChannels.map((channel) => (
-                      <label key={channel.id} className="flex items-center space-x-3 cursor-pointer p-3 rounded-lg hover:bg-gray-900/50 transition-colors">
-                        <input
-                          type="checkbox"
-                          checked={channel.enabled}
-                          onChange={(e) => toggleChannel(channel.id)}
-                          className="w-5 h-5 text-green-500 bg-gray-800 border-gray-600 rounded focus:ring-green-500 focus:ring-2"
-                        />
-                        <div className="flex-1">
-                          <span className="text-white font-medium text-base">{channel.name}</span>
-                          <div className="text-green-500 text-sm">+${channel.price}/mo</div>
+                      <label key={channel.id} className="flex items-center justify-between cursor-pointer py-2">
+                        <div className="flex items-center space-x-3">
+                          <input
+                            type="checkbox"
+                            checked={channel.enabled}
+                            onChange={(e) => toggleChannel(channel.id)}
+                            className="w-4 h-4 text-green-500 bg-gray-800 border-gray-600 rounded focus:ring-green-500 focus:ring-2"
+                          />
+                          <span className="text-white text-base">{channel.name}</span>
                         </div>
-                      </label>
+                        <span className="text-green-500 text-sm">+${channel.price}/mo</span>
+                  </label>
                     ))}
+                    </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
 
             {/* Price Summary - Right Side */}
             <div className="lg:sticky lg:top-8 h-fit">
@@ -505,15 +501,15 @@ export default function Home() {
               <div className="mb-8">
                 <div className="inline-block bg-green-500 text-white px-6 py-3 rounded-full text-sm font-semibold">
                   Recommended Plan: {recommendedPlan}
-                </div>
-              </div>
+            </div>
+        </div>
 
               {/* Price Breakdown */}
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between items-center py-2">
                   <span className="text-gray-300">Base Plan ({teamSize === 100 ? '100+' : teamSize} Seats)</span>
                   <span className="text-white font-semibold">${basePrice}/mo</span>
-                </div>
+          </div>
                 
                 {audienceMultiplier > 1 && (
                   <div className="flex justify-between items-center py-2">
@@ -564,95 +560,182 @@ export default function Home() {
                   ? 'Book a Demo' 
                   : 'Start Your 14-Day Trial'
                 }
-              </Button>
+                      </Button>
 
               <p className="text-gray-400 text-sm text-center mt-6">
                 No credit card required • Cancel anytime
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Creative Studio Section with Scroll Design */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex items-center justify-center">
-              <Keyframes />
-            </div>
-              <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
-            >
-              <h2 className="text-xl font-bold text-white mb-4">Creative Studio</h2>
-              <p className="text-base text-gray-300 mb-6">AI that writes ad copy, blog posts, and social media updates in any tone.</p>
-              <Button variant="gradient" className="bg-gray-900 text-white hover:bg-gray-800 border-2 border-white">
-                Try Creative Studio
-                      </Button>
-                </motion.div>
             </div>
           </div>
       </section>
 
-      {/* AI-Powered Features Section */}
+      {/* Pricing Plans Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-xl font-bold text-white mb-4">AI-Powered Features</h2>
-            <p className="text-base text-gray-300 max-w-2xl mx-auto">Discover our intelligent marketing tools that adapt and learn from your data</p>
-            </div>
-          <AIFeaturesGrid />
-        </div>
-      </section>
-
-      {/* Blog/Resources Section */}
-      <section id="blog" className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-xl font-bold text-green-500 mb-8 text-center">Resources & Insights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "AI Marketing Trends 2024",
-                excerpt: "Discover the latest trends in AI-powered marketing and how they're reshaping the industry.",
-                date: "March 15, 2024",
-                category: "Trends"
-              },
-              {
-                title: "How to Optimize Your Campaigns",
-                excerpt: "Learn the best practices for optimizing your marketing campaigns with AI assistance.",
-                date: "March 10, 2024",
-                category: "Guide"
-              },
-              {
-                title: "The Future of Content Creation",
-                excerpt: "Explore how AI is revolutionizing content creation and what it means for marketers.",
-                date: "March 5, 2024",
-                category: "Insights"
-              }
-            ].map((post, idx) => (
-              <motion.div
-                key={idx}
+            <motion.h2 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-green-500 transition-colors"
+              className="text-xl font-bold text-white mb-4"
+            >
+              SIMPLE, TRANSPARENT PRICING
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-base text-gray-300 max-w-2xl mx-auto mb-8"
+            >
+              Choose the plan that fits your business needs. All plans include our core AI features.
+            </motion.p>
+            
+            {/* Billing Toggle */}
+            <div className="flex items-center justify-center space-x-4 mb-8">
+              <span className={`text-sm ${!yearlyPricing ? 'text-white' : 'text-gray-400'}`}>Monthly</span>
+              <button
+                onClick={() => setYearlyPricing(!yearlyPricing)}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                  yearlyPricing ? 'bg-green-500' : 'bg-gray-600'
+                }`}
               >
-                <div className="mb-4">
-                  <span className="text-green-500 text-sm font-medium">{post.category}</span>
-                  <span className="text-gray-400 text-sm ml-2">• {post.date}</span>
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    yearlyPricing ? 'translate-x-5' : 'translate-x-0.5'
+                  }`}
+                />
+              </button>
+              <span className={`text-sm ${yearlyPricing ? 'text-white' : 'text-gray-400'}`}>Yearly</span>
+              <div className="w-16 h-6 flex items-center justify-center">
+                {yearlyPricing && (
+                  <span className="bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">
+                    Save 20%
+                  </span>
+                )}
+            </div>
+        </div>
           </div>
-                <h3 className="text-base font-bold text-white mb-3">{post.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">{post.excerpt}</p>
-                <Button variant="outline" className="text-green-500 border-green-500 hover:bg-green-500 hover:text-white">
-                  Read More
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Basic Plan */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative bg-gray-700 rounded-3xl p-8 border border-gray-600 hover:border-gray-500 transition-all duration-300 hover:shadow-xl group flex flex-col"
+            >
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-white mb-4">Basic Plan</h3>
+                <div className="mb-4">
+                  <span className="text-3xl font-bold text-white">${yearlyPricing ? '8' : '10'}</span>
+                  <span className="text-gray-300 ml-2">/ month</span>
+                </div>
+                <p className="text-gray-300 text-sm">Perfect for small businesses and startups.</p>
+              </div>
+              <ul className="space-y-2 mb-8 flex-1">
+                {[
+                  'AI-powered content generation',
+                  'Basic audience insights and analytics',
+                  'Email marketing automation',
+                  '5 AI-generated campaigns per month',
+                  'Community support and documentation'
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-300 text-sm">
+                    <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button variant="outline" className="w-full py-3 rounded-2xl border-2 border-gray-500 text-black hover:bg-green-500 hover:text-white hover:border-green-500 transition-all group-hover:border-green-500 mt-auto">
+                Current Plan
+              </Button>
+            </motion.div>
+
+            {/* Plus Plan - RECOMMENDED */}
+              <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative bg-white rounded-3xl p-8 border-2 border-green-500 shadow-xl scale-105 flex flex-col"
+            >
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-green-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                  RECOMMENDED
+                </span>
+              </div>
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Plus Plan</h3>
+                <div className="mb-4">
+                  <span className="text-3xl font-bold text-gray-900">${yearlyPricing ? '39' : '49'}</span>
+                  <span className="text-gray-600 ml-2">/ month</span>
+          </div>
+                <p className="text-gray-600 text-sm">Advanced AI features for growing businesses</p>
+              </div>
+              <ul className="space-y-2 mb-8 flex-1">
+                {[
+                  'Everything in Basic Plan',
+                  'Advanced AI content generation',
+                  'Predictive analytics and audience forecasting',
+                  'Unlimited campaigns and automation workflows',
+                  'Priority support with dedicated account manager',
+                  'Custom integrations with 200+ marketing tools'
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-700 text-sm">
+                    <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all bg-green-500 text-white hover:bg-green-600 mt-auto">
+                Choose Plus Plan
                 </Button>
               </motion.div>
-            ))}
+
+            {/* Pro Plan */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative bg-gray-700 rounded-3xl p-8 border border-gray-600 hover:border-gray-500 transition-all duration-300 hover:shadow-xl group flex flex-col"
+            >
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-white mb-4">Pro Plan</h3>
+                <div className="mb-4">
+                  <span className="text-3xl font-bold text-white">${yearlyPricing ? '159' : '199'}</span>
+                  <span className="text-gray-300 ml-2">/ month</span>
+                </div>
+                <p className="text-gray-300 text-sm">Enterprise-grade AI marketing suite for large teams and agencies.</p>
+              </div>
+              <ul className="space-y-2 mb-8 flex-1">
+                {[
+                  'Everything in Plus Plan',
+                  'Custom AI model training for your brand',
+                  'Advanced predictive analytics',
+                  'White-label solutions and API access',
+                  'Dedicated support team with SLA guarantee',
+                  'Unlimited team members and collaboration tools',
+                  'Advanced security and compliance features'
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center text-gray-300 text-sm">
+                    <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button variant="outline" className="w-full py-3 rounded-2xl border-2 border-gray-500 text-black hover:bg-green-500 hover:text-white hover:border-green-500 transition-all group-hover:border-green-500 mt-auto">
+                Select Pro Plan
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -725,71 +808,10 @@ export default function Home() {
         <ParallaxText baseVelocity={2}>AI-Powered Marketing</ParallaxText>
       </section>
 
-      {/* AI-Powered Features Section */}
-      <section id="features" className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-xl font-bold text-white mb-4">
-              AI-Powered Features
-            </h2>
-            <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Discover our intelligent marketing tools that adapt and learn from your data
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Audience Forecaster */}
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
-              <div className="text-3xl mb-4">🔮</div>
-              <h3 className="text-base font-bold text-white mb-3">Audience Forecaster</h3>
-              <p className="text-gray-300 text-sm">
-                Analyzes market data to predict which customer segments will be most valuable next quarter.
-              </p>
-            </div>
-
-            {/* Campaign Autopilot */}
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
-              <div className="text-3xl mb-4">🚀</div>
-              <h3 className="text-base font-bold text-white mb-3">Campaign Autopilot</h3>
-              <p className="text-gray-300 text-sm">
-                Manages and optimizes your ad spend across Google, Facebook, and TikTok automatically.
-              </p>
-            </div>
-
-            {/* SEO Strategist */}
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
-              <div className="text-3xl mb-4">🎯</div>
-              <h3 className="text-base font-bold text-white mb-3">SEO Strategist</h3>
-              <p className="text-gray-300 text-sm">
-                Uncovers competitor keywords and generates a content plan to rank #1.
-              </p>
-            </div>
-
-            {/* Brand Sentinel */}
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
-              <div className="text-3xl mb-4">🛡️</div>
-              <h3 className="text-base font-bold text-white mb-3">Brand Sentinel</h3>
-              <p className="text-gray-300 text-sm">
-                Monitors social media for mentions of your brand and uses AI to analyze sentiment in real-time.
-              </p>
-            </div>
-
-            {/* Insight Hub */}
-            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
-              <div className="text-3xl mb-4">📊</div>
-              <h3 className="text-base font-bold text-white mb-3">Insight Hub</h3>
-              <p className="text-gray-300 text-sm">
-                A central dashboard that uses AI to translate complex analytics into plain-English insights.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Section - Redesigned */}
       {/* (Removed standalone Pricing section) */}
 
-      {/* Testimonials Section */}
+      {/* Results & Testimonials Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="container mx-auto">
           <div className="text-center mb-16">
@@ -799,7 +821,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-xl font-bold text-white mb-6"
             >
-              Loved by <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">Thousands</span>
+              LOVED BY THOUSANDS
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -814,19 +836,19 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Testimonial Carousel - Left Side */}
-            <motion.div
+          <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
               className="flex justify-start"
-            >
-              <TestimonialCarousel 
-                testimonials={testimonials}
+          >
+            <TestimonialCarousel 
+              testimonials={testimonials}
                 autoPlayInterval={5000}
-                className="py-8"
-              />
-            </motion.div>
+              className="py-8"
+            />
+          </motion.div>
             
             {/* Right Side Content */}
             <motion.div
@@ -871,7 +893,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="text-xl font-bold text-white mb-6"
               >
-                Built by Marketers, for Marketers
+                ABOUT
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -908,7 +930,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Contact Form */}
             <div className="rounded-xl border border-gray-700 p-6 bg-black">
-              <h2 className="text-xl font-bold text-white mb-6">Contact Us</h2>
+              <h2 className="text-xl font-bold text-white mb-6">CONTACT US</h2>
               <form className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input
@@ -936,7 +958,7 @@ export default function Home() {
                 </div>
             {/* FAQ */}
                 <div>
-              <h2 className="text-xl font-bold text-white mb-6">FAQ</h2>
+              <h2 className="text-xl font-bold text-white mb-6">FAQS</h2>
               <div className="space-y-4">
                 {[
                   {q: 'What is ADmyBRAND AI Suite?', a: 'ADmyBRAND AI Suite is a comprehensive AI-powered marketing platform that automates campaigns, creates content, and provides predictive analytics to help businesses scale their marketing efforts.'},
@@ -961,6 +983,58 @@ export default function Home() {
 
       {/* Final CTA Section */}
       {/* (Remove section with Ready to build your future? and Start Your Free Trial/Explore Plans buttons) */}
+
+      {/* Final Call-to-Action Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
+        <div className="container mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-xl font-bold text-white mb-6">
+              Ready to Transform Your Marketing?
+            </h2>
+            <p className="text-base text-gray-300 mb-8">
+              Join thousands of businesses that have already revolutionized their marketing with ADmyBRAND AI Suite.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-green-500 hover:bg-green-600">
+                Start Your Free Trial
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-black hover:bg-white hover:text-black">
+                Schedule a Demo
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Logo Wall Section */}
+      <section className="py-12 bg-black">
+        <div className="container mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-xl font-bold text-white mb-4">TRUSTED BY INDUSTRY LEADERS</h2>
+          </div>
+          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll">
+              {logos.map((logo, index) => (
+                <li key={index} className="text-gray-400 hover:text-white transition-colors duration-300 text-base font-medium">
+                  {logo}
+                </li>
+              ))}
+            </ul>
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll" aria-hidden="true">
+               {logos.map((logo, index) => (
+                <li key={index} className="text-gray-400 hover:text-white transition-colors duration-300 text-base font-medium">
+                  {logo}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </main>

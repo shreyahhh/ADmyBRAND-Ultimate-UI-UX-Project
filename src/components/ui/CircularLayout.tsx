@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 
 const CircularLayout = () => {
   const targetGroups = [
-    { text: "Kids" },
-    { text: "Homemakers" },
-    { text: "School Students" },
-    { text: "College Students" },
-    { text: "Working Women" },
-    { text: "Family" },
-    { text: "High Income" },
-    { text: "Middle Class" },
-    { text: "Tier 2 & 3 Towns" }
+    { text: "CRM Data" },
+    { text: "Social Media Trends" },
+    { text: "Ad Performance Metrics" },
+    { text: "Competitor Benchmarks" },
+    { text: "SEO & Keyword Data" },
+    { text: "Customer Behavior Signals" },
+    { text: "Market Analytics" },
+    { text: "Sales Funnel Data" },
+    { text: "Customer Feedback" }
   ];
 
   // Calculate positions for circles around the center
