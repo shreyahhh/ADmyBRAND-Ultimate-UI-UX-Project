@@ -6,9 +6,7 @@ import { Button } from '@/components/ui/Button';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigation = [
-  ];
+  const navigation: { href: string; label: string }[] = [];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -32,7 +30,6 @@ const Navbar = () => {
                 <span className="text-black font-bold text-sm">A</span>
               </div>
               <span className="text-base font-bold text-white">ADmyBRAND</span>
-              <span className="text-base font-bold text-green-400 ml-2">AI-Suite</span>
             </Link>
           </div>
 
@@ -40,12 +37,12 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <button
-                key={item.name}
+                key={item.label}
                 onClick={() => scrollToSection(item.href)}
                 className="text-sm font-medium text-gray-300 hover:text-white transition-colors cursor-pointer"
                 suppressHydrationWarning
               >
-                {item.name}
+                {item.label}
               </button>
             ))}
           </div>
@@ -108,12 +105,12 @@ const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-800/40">
               {navigation.map((item) => (
                 <button
-                  key={item.name}
+                  key={item.label}
                   onClick={() => scrollToSection(item.href)}
                   className="block w-full text-left px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
                   suppressHydrationWarning
                 >
-                  {item.name}
+                  {item.label}
                 </button>
               ))}
               <div className="pt-4 space-y-2">
