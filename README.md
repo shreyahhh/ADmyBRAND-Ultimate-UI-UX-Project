@@ -16,7 +16,7 @@
 ---
 
 ## Live Demo
-[View Live Demo]([https://your-demo-link.com](https://a-dmy-brand-ultimate-ui-ux-project-cw6n-q9j31q0e4.vercel.app/))
+[View Live Demo](https://your-demo-link.com](https://a-dmy-brand-ultimate-ui-ux-project-cw6n-q9j31q0e4.vercel.app/)
 
 ---
 
