@@ -33,13 +33,10 @@ const CircularLayout = () => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, type: 'spring' }}
-        className="absolute z-10 w-48 h-48 bg-black rounded-full flex items-center justify-center shadow-2xl border-2 border-gray-800"
+        className="absolute z-10 w-48 h-48 bg-black rounded-full flex items-center justify-center shadow-2xl border-4 border-green-500"
       >
         <div className="text-center text-white p-4">
-          <h3 className="text-sm font-bold leading-tight">
-            Book Cost Effective Ads for Your
-          </h3>
-          <p className="text-lg font-extrabold mt-1">Target Group</p>
+          <p className="text-lg font-extrabold mt-1">AI-Suite</p>
         </div>
       </motion.div>
 
@@ -52,7 +49,7 @@ const CircularLayout = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 + index * 0.1, type: 'spring' }}
-            className="absolute w-28 h-28 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer"
+            className="absolute w-28 h-28 bg-white rounded-full flex items-center justify-center text-black shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer border-2 border-gray-200"
             style={{
               // Using motion values for positioning
               x: position.x,

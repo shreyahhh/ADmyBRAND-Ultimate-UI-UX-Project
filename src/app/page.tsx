@@ -77,37 +77,37 @@ export default function Home() {
       quote: "ADmyBRAND's AI cut our ad spend by 30% while increasing leads by 40%. The ROI speaks for itself.",
       author: "Sarah Chen",
       role: "CMO at TechFlow",
-      avatar: "👩‍💼"
+      avatar: ""
     },
     {
       quote: "The Creative Studio generates better copy than our entire content team. It's like having 10 copywriters.",
       author: "Marcus Rodriguez",
       role: "Marketing Director at Innovate",
-      avatar: "👨‍💼"
+      avatar: ""
     },
     {
       quote: "Campaign Autopilot manages our $2M ad budget better than any human ever could. Incredible results.",
       author: "Emily Watson",
       role: "CEO at GrowthLab",
-      avatar: "👩‍💻"
+      avatar: ""
     },
     {
       quote: "The AI insights helped us discover new market opportunities we never knew existed. Revenue up 60%!",
       author: "David Kim",
       role: "Founder at StartupScale",
-      avatar: "👨‍💻"
+      avatar: ""
     },
     {
       quote: "From content creation to campaign optimization, ADmyBRAND handles everything. Our team can focus on strategy.",
       author: "Lisa Zhang",
       role: "VP Marketing at TechCorp",
-      avatar: "👩‍🎯"
+      avatar: ""
     },
     {
       quote: "The predictive analytics are phenomenal. We're always two steps ahead of our competition now.",
       author: "Michael Brown",
       role: "Head of Growth at InnovateLabs",
-      avatar: "👨‍🔬"
+      avatar: ""
     }
   ];
 
@@ -268,7 +268,6 @@ export default function Home() {
       </section>
 
 
-
       {/* Core Pillars Section - Bento Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="container mx-auto">
@@ -283,6 +282,8 @@ export default function Home() {
             </motion.h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+
+            
             {/* Generate */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -351,6 +352,35 @@ export default function Home() {
             </p>
           </div>
           <AIFeaturesGrid />
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Resources</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">Insights, guides, and trends in AI marketing.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {blogPosts.map((post, idx) => (
+              <div key={post.id} className="bg-[#181f2a] rounded-xl p-6 shadow-lg flex flex-col h-full border border-transparent hover:border-green-400 transition-all duration-300">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-green-400 font-semibold text-sm">
+                    {idx === 0 ? 'Trends' : idx === 1 ? 'Guide' : 'Insights'}
+                  </span>
+                  <span className="text-gray-400 text-xs">• {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                </div>
+                <h3 className="text-white font-bold text-lg mb-2">{post.title}</h3>
+                <p className="text-gray-300 text-sm mb-6 flex-1">{post.excerpt}</p>
+                <a href={post.link} className="inline-block mt-auto">
+                  <button className="px-6 py-2 rounded-lg border-2 border-green-400 text-green-400 bg-transparent font-semibold hover:bg-green-400 hover:text-black transition-all duration-200">
+                    Read More
+                  </button>
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -750,7 +780,7 @@ export default function Home() {
           {/* Feature cards on the right */}
           <div className="grid grid-cols-1 gap-4 w-full md:w-1/2">
               {/* Smart Analytics */}
-            <div className="bg-black border border-green-500 rounded-lg p-4 flex items-start gap-3">
+            <div className="bg-black border border-white rounded-lg p-4 flex items-start gap-3">
               <svg width="28" height="28" fill="none" stroke="green" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7 17v-6M12 17v-2M17 17v-8"/></svg>
               <div>
                 <div className="text-green-500 font-semibold text-sm">Smart Analytics</div>
@@ -758,7 +788,7 @@ export default function Home() {
                   </div>
                 </div>
               {/* Automated Campaigns */}
-            <div className="bg-black border border-green-500 rounded-lg p-4 flex items-start gap-3">
+            <div className="bg-black border border-white rounded-lg p-4 flex items-start gap-3">
               <svg width="28" height="28" fill="none" stroke="green" strokeWidth="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 12h8"/></svg>
               <div>
                 <div className="text-green-500 font-semibold text-sm">Automated Campaigns</div>
@@ -766,7 +796,7 @@ export default function Home() {
                   </div>
                 </div>
               {/* Content Generation */}
-            <div className="bg-black border border-green-500 rounded-lg p-4 flex items-start gap-3">
+            <div className="bg-black border border-white rounded-lg p-4 flex items-start gap-3">
               <svg width="28" height="28" fill="none" stroke="green" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 17v-2a4 4 0 014-4h8a4 4 0 014 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               <div>
                 <div className="text-green-500 font-semibold text-sm">Content Generation</div>
@@ -774,7 +804,7 @@ export default function Home() {
                   </div>
                 </div>
               {/* Predictive Modeling */}
-            <div className="bg-black border border-green-500 rounded-lg p-4 flex items-start gap-3">
+            <div className="bg-black border border-white rounded-lg p-4 flex items-start gap-3">
               <svg width="28" height="28" fill="none" stroke="green" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
               <div>
                 <div className="text-green-500 font-semibold text-sm">Predictive Modeling</div>
@@ -782,7 +812,7 @@ export default function Home() {
                   </div>
                 </div>
               {/* Real-time Optimization */}
-            <div className="bg-black border border-green-500 rounded-lg p-4 flex items-start gap-3">
+            <div className="bg-black border border-white rounded-lg p-4 flex items-start gap-3">
               <svg width="28" height="28" fill="none" stroke="green" strokeWidth="2" viewBox="0 0 24 24"><path d="M13 2v8h8"/><path d="M3 12a9 9 0 0015 6.7l3-3"/></svg>
               <div>
                 <div className="text-green-500 font-semibold text-sm">Real-time Optimization</div>
@@ -790,7 +820,7 @@ export default function Home() {
                   </div>
                 </div>
               {/* Customer Intelligence */}
-            <div className="bg-black border border-green-500 rounded-lg p-4 flex items-start gap-3">
+            <div className="bg-black border border-white rounded-lg p-4 flex items-start gap-3">
               <svg width="28" height="28" fill="none" stroke="green" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 20v-6"/><circle cx="12" cy="10" r="4"/><path d="M6 20v-2a4 4 0 014-4h0a4 4 0 014 4v2"/></svg>
               <div>
                 <div className="text-green-500 font-semibold text-sm">Customer Intelligence</div>

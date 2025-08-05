@@ -32,6 +32,7 @@ const Navbar = () => {
                 <span className="text-black font-bold text-sm">A</span>
               </div>
               <span className="text-base font-bold text-white">ADmyBRAND</span>
+              <span className="text-base font-bold text-green-400 ml-2">AI-Suite</span>
             </Link>
           </div>
 

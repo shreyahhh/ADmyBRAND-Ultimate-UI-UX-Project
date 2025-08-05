@@ -153,7 +153,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-6">
               <span className="text-sm text-muted-foreground">
-                Made with ❤️ for modern marketers
+                Made by Shreya. Reach out to me at shreyyaaa369@gmail.com.
               </span>
             </div>
           </div>

@@ -15,7 +15,22 @@
 
 ---
 
+## 🚀 Live Demo
+[View Live Demo](https://your-demo-link.com)
+
+---
+
 ## ✨ Features
+- Animated, responsive landing page with hero, marquee, and trusted companies scroll
+- Three Pillars of AI Marketing (Generate, Predict, Automate) with animated cards
+- AI-powered features deep-dive section
+- Resources/blog section styled as cards
+- Custom pricing calculator with interactive UI
+- CircularLayout and modular UI
+- Responsive navigation bar with brand highlight
+- Footer with animated social icons
+- Smooth scroll and framer-motion animations throughout
+- Fully responsive and accessible design
 
 ### 🤖 **AI-Powered Core Features**
 - **Smart Analytics** 📊 - Advanced behavioral insights and predictive analytics
@@ -38,6 +53,27 @@
 - **Company Integrations** 🔗 - Support for major platforms (Google, Shopify, Notion, etc.)
 - **Contact System** 📞 - Professional contact forms and information sections
 - **User Authentication** 🔐 - Secure login system with form validation
+
+---
+
+## 🛠️ Tech Stack
+- **Framework:** Next.js (React 18+)
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **TypeScript** for type safety
+- **Component Organization:** Modular, reusable components in `src/components/ui/`
+
+---
+
+## 📝 Work Done
+- Designed and implemented all main sections (Hero, Marquee, Pillars, Features, Pricing, Resources, Footer)
+- Added animated marquees and smooth scroll
+- Created reusable UI components (Button, Textarea, etc.)
+- Moved all reusable UI to `src/components/ui/`
+- Cleaned up codebase: removed unused files, imports, and variables
+- Added clear section comments for readability
+- Updated footer icons to animate green on hover
+- Improved accessibility and responsiveness throughout
 
 ---
 
