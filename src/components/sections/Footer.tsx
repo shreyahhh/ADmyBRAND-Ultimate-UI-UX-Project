@@ -60,20 +60,19 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-muted/30 border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-black border-t border-gray-800">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">A</span>
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">A</span>
               </div>
-              <span className="text-xl font-bold gradient-text">ADmyBRAND</span>
+              <span className="text-white font-bold text-xl">ADmyBRAND</span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
-              Transform your marketing with AI-powered insights, automation, and optimization. 
-              The complete AI suite for modern marketers.
+            <p className="mt-4 text-gray-400 text-sm max-w-md">
+              The future of marketing is intelligent. Transform your campaigns with AI-powered tools that adapt and learn.
             </p>
             <div className="flex space-x-4 mt-6">
               {socialLinks.map((social) => (
@@ -95,10 +94,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                  <Link href={link.href} className="text-gray-400 hover:text-green-500 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -112,10 +108,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                  <Link href={link.href} className="text-gray-400 hover:text-green-500 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -129,10 +122,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                  <Link href={link.href} className="text-gray-400 hover:text-green-500 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -146,10 +136,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                  <Link href={link.href} className="text-gray-400 hover:text-green-500 transition-colors">
                     {link.name}
                   </Link>
                 </li>
